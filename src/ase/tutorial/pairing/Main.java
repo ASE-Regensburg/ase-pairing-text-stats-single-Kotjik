@@ -1,19 +1,32 @@
 package ase.tutorial.pairing;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
 	// write your code here
-        System.out.println("Text input: hahaha you fool");
+       //String content = new String(Files.readAllBytes(Paths.get("C:\\Users\\Konstantin\\Documents\\GitHub\\ase-pairing-text-stats-single-Kotjik\\data\\1H4.txt")));
 
-        System.out.println(countWordsUsingSplit("hahaha you fool"));
-        System.out.println(getAverageWordLength("hahaha you fool"));
 
-        //loesung
+        File folder = new File("C:\\Users\\Konstantin\\Documents\\GitHub\\ase-pairing-text-stats-single-Kotjik\\data");
+        File[] listOfFiles = folder.listFiles();
 
+        String content = "";
+
+        for(int i = 0; i< listOfFiles.length; i++) {
+            System.out.println(listOfFiles[i]);
+            //content = new String(Files.readAllBytes(Paths.get(listOfFiles[i])));
+            //System.out.println(countWordsUsingSplit(content));
+
+        }
     }
 
     //Count Words
